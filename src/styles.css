@@ -24,6 +24,9 @@
 }
 
 @media only screen and (max-width:900px) {
+    .calendar-width {
+        width: 90%;
+    }
     .header-image {
         width: 100%;
         height: 250px;
@@ -39,6 +42,9 @@
 }
 
 @media only screen and (min-width:900px) {
+    .calendar-width {
+        width: 50%;
+    }
     .header-image {
         width: 100%;
         height: 100vh;
@@ -55,6 +61,31 @@
 
 .circle {
     border-radius: 100%;
+}
+
+a.shift, .b-shift, .c-shift {
+    position: absolute;
+}
+
+.a-shift:before, .a-shift:after {
+    background-image: url("./assets/dot-blue.svg");
+    background-size: 10px 10px;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.b-shift:before, .b-shift:after {
+    background-image: url("./assets/dot-yellow.svg");
+    background-size: 10px 10px;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.c-shift:before, .c-shift:after {
+    background-image: url("./assets/dot-black.svg");
+    background-size: 10px 10px;
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .mat-calendar {

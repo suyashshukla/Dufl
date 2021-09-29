@@ -40,9 +40,9 @@ export class User {
         return finalShift;
     }
 
-
-    private get todaysShift() {
-        return this.getShiftOnDate(new Date());
+    get todaysShift() {
+        var shift = this.getShiftOnDate(new Date());
+        return shift === Shift.A ? 'A' : shift === Shift.B ? 'B' : 'C';
     }
 
     private get registeredShiftStartDate() {

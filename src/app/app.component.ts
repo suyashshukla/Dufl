@@ -21,11 +21,11 @@ export class AppComponent implements OnInit {
     if (view === 'month' && !moment(cellDate).isBefore(moment.now())) {
       switch (this.user.getShiftOnDate(cellDate)) {
         case Shift.A:
-          return 'bg-info circle';
+          return 'a-shift';
         case Shift.B:
-          return 'bg-warning circle';
+          return 'b-shift';
         case Shift.C:
-          return 'bg-dark text-white circle';
+          return 'c-shift';
         default:
           return 'bg-success circle';
       }
