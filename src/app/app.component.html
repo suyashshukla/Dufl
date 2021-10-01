@@ -1,5 +1,5 @@
-<div class="row p-0 overflow-hidden">
-  <div class="position-relative header col-sm-6">
+<div class="row p-0 m-0 overflow-hidden max-width-100">
+  <div class="position-relative header col-sm-6 p-0">
     <img src="../assets/dufl.jpg" class="header-image">
     <div class="position-absolute header-text center-parent flex-column text-center" *ngIf="doesUserExists">
       <span class="fredoka">Welcome {{user.name}}</span>
@@ -66,7 +66,7 @@
       </div>
     </div>
     <div class="calendar-width">
-      <mat-card class="demo-inline-calendar-card">
+      <mat-card class="demo-inline-calendar-card calendar-height">
         <mat-calendar [dateClass]="dateClass"></mat-calendar>
       </mat-card>
     </div>
