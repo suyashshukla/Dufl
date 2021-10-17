@@ -1,0 +1,6 @@
+{
+	"appId": "com.kavyastrot.dufl",
+	"appName": "dufl",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

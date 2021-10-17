@@ -45,6 +45,10 @@ export class User {
         return shift === Shift.A ? 'A' : shift === Shift.B ? 'B' : 'C';
     }
 
+    get isModelValid() {
+        return this.name && this.dateOfRegistration && [Shift.A, Shift.B, Shift.C].includes(this.shiftOnRegistrationDate);
+    }
+
     private get registeredShiftStartDate() {
         let shiftStartDate = new Date(this.dateOfRegistration);
         if (this.isInFirstHalfDays(this.dateOfRegistration)) {

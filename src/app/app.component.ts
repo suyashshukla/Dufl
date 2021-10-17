@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { Shift } from './models/constants';
 import { User } from './models/user.model';
 import { UserService } from './services/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -35,14 +36,23 @@ export class AppComponent implements OnInit {
   }
 
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private snackBarService: MatSnackBar
+  ) { }
 
   ngOnInit() {
     this.user = this.userService.getUser();
   }
 
   saveUserData() {
-    this.userService.setUser(this.user);
+    if (this.user.isModelValid) {
+      this.userService.setUser(this.user);
+      this.snackBarService.open('User Data Captured Successfully!', 'Close');
+    }
+    else {
+      this.snackBarService.open('Invalid User Data!', 'Close');
+    }
   }
 
   invalidateUserForm() {
